@@ -25,11 +25,11 @@ function select_movie_with_max_votes(movies){
 function get_movie(movie_id){
   var endpoint = "http://localhost:8000/api/v1/titles/"
   var url = endpoint.concat('', movie_id);
-  var div_top_rated = document.getElementsByClassName('top_rated_contents')[0];
-  var poster = div_top_rated.getElementsByClassName("poster")[0];
-  var title = div_top_rated.getElementsByClassName("title")[0];
-  var description = div_top_rated.getElementsByClassName("description")[0];
-  var button = div_top_rated.getElementsByClassName("button_top_movie")[0];
+  var div_top_movie = document.getElementsByClassName('top_movie')[0];
+  var poster = div_top_movie.getElementsByClassName("poster")[0];
+  var title = div_top_movie.getElementsByClassName("title")[0];
+  var description = div_top_movie.getElementsByClassName("description")[0];
+  var button = div_top_movie.getElementsByClassName("more_top_movie")[0];
   fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -37,10 +37,10 @@ function get_movie(movie_id){
       title.innerHTML = data['title'];
       description.innerHTML = data['description'];
       button.setAttribute("id", `${movie_id}`);
-      div_top_rated.appendChild(poster);
-      div_top_rated.appendChild(title);
-      div_top_rated.appendChild(description);
-      div_top_rated.appendChild(button);
+      div_top_movie.appendChild(poster);
+      div_top_movie.appendChild(title);
+      div_top_movie.appendChild(description);
+      div_top_movie.appendChild(button);
     });
 };
 
