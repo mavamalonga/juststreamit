@@ -23,6 +23,16 @@ function choice_best_movie(movies){
 };
 
 function create_top_movie_section(){
+
+  // delete div top movie if exist
+  try {
+      var div_top_rated = document.getElementsByClassName("top_rated")[0];
+      var old_div_top_movie = document.getElementsByClassName("top_movie")[0];
+      div_top_rated = div_top_rated.removeChild(old_div_top_movie);
+    } catch (error){
+      // pass
+    }
+
   // get node 
   var div_top_rated = document.getElementsByClassName("top_rated")[0];
 
@@ -96,10 +106,11 @@ function get_data_best_movie(movie_id){
 };
 
 
+function top_movie(){
+  select_movie_imdb_max(url).then(function(result) {
+      movie_id = choice_best_movie(result['results']);
+      create_top_movie_section();
+      get_data_best_movie(movie_id);
 
-select_movie_imdb_max(url).then(function(result) {
-    movie_id = choice_best_movie(result['results']);
-    create_top_movie_section();
-    get_data_best_movie(movie_id);
-
-  });
+    });
+}

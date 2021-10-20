@@ -24,7 +24,7 @@ function create_details_section(){
   title.setAttributeNode(attr_class);
   div_top_movie.appendChild(title);
 
-  // section contents elements details 
+  // div contents elements details 
   var div_details = document.createElement("ul");
   var attr_class = document.createAttribute("class");
   attr_class.value = "details";
@@ -50,6 +50,7 @@ function create_details_section(){
   div_details.appendChild(country_origin);
   div_details.appendChild(result_box_office);
   div_details.appendChild(film_summary);
+  div_top_movie.appendChild(div_details);
 
   // button : previous
   var button = document.createElement("input");
@@ -83,6 +84,9 @@ function more_top_movie(){
 
   // delete
   div_top_rated = div_top_rated.removeChild(div_top_movie);
+
+  // build new div top movie
+  create_details_section();
 
 
   fetch(url)
