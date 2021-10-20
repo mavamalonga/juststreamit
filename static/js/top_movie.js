@@ -25,7 +25,6 @@ function choice_best_movie(movies){
 function create_top_movie_section(){
   // get node 
   var div_top_rated = document.getElementsByClassName("top_rated")[0];
-  console.log(div_top_rated)
 
   // div top movie
   var div_top_movie = document.createElement('div');
@@ -78,7 +77,6 @@ function get_data_best_movie(movie_id){
   var endpoint = "http://localhost:8000/api/v1/titles/"
   var url = endpoint.concat('', movie_id);
   var div_top_movie = document.getElementsByClassName('top_movie')[0];
-  console.log(div_top_movie);
   var poster = div_top_movie.getElementsByClassName("poster")[0];
   var title = div_top_movie.getElementsByClassName("title")[0];
   var description = div_top_movie.getElementsByClassName("description")[0];
