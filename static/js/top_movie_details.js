@@ -25,16 +25,13 @@ function create_details_section(){
   div_top_movie.insertBefore(div_info, div_top_movie.children[-1]);
   div_top_rated.insertBefore(div_top_movie, div_top_rated.children[1]);
 
-  // title
-  var title = document.createElement('h1');
-  var attr_class = document.createAttribute('class');
-  attr_class.value = "title";
-  title.setAttributeNode(attr_class);
-  div_top_movie.appendChild(title);
+  //get div top movie and div info
+  var div_top_movie = document.getElementsByClassName("top_movie")[0];
+  var div_info = document.getElementsByClassName("info")[0];
 
   // div contents elements details 
   var ul = document.createElement("ul");
-  div_top_movie.appendChild(ul);
+  div_info.appendChild(ul);
 
   // button : previous
   var button = document.createElement("input");
@@ -50,7 +47,14 @@ function create_details_section(){
   button.setAttributeNode(attr_class);
   button.setAttributeNode(attr_onclick);
   button.setAttributeNode(attr_value);
-  div_top_movie.appendChild(button);
+  div_info.appendChild(button);
+
+  // title
+  var title = document.createElement('h1');
+  var attr_class = document.createAttribute('class');
+  attr_class.value = "title";
+  title.setAttributeNode(attr_class);
+  div_info.appendChild(title);
 
   // insert elemnets
   div_top_rated.insertBefore(div_top_movie, div_top_rated.children[1]);
@@ -74,20 +78,18 @@ function more_top_movie(){
 
   // get elements
   var div_top_movie = document.getElementsByClassName('top_movie')[0];
-  var ul =  div_top_movie.querySelectorAll("ul")[0]; 
-  console.log(ul);
+  var div_info = document.getElementsByClassName('info')[0];
   var poster = div_top_movie.getElementsByClassName("poster")[0];
-  var title = div_top_movie.getElementsByClassName("title")[0];
-  //var genres = div_details.getElementsByClassName("genres")[0]
+  var title = div_info.getElementsByClassName("title")[0];
+  var ul =  div_info.querySelectorAll("ul")[0];
+  var button = div_info.querySelectorAll("input")[0];
 
   fetch(url)
     .then(response => response.json())
     .then(data => {
       // div top movie
       poster.setAttribute("src", data['image_url']);
-      title.innerHTML = data['title'];
       div_top_movie.appendChild(poster);
-      div_top_movie.appendChild(title);
 
       // details
 
@@ -126,6 +128,15 @@ function more_top_movie(){
       var date_published = document.createElement("li");
       date_published.innerHTML = data['date_published'];
       ul.appendChild(date_published);
+
+      title.innerHTML = data['title'];
+      div_info.appendChild(title);
+
+      div_info.appendChild(ul);
+
+      div_info.appendChild(button);
+
+      div_top_movie.appendChild(div_info);
 
       console.log(data);
       });

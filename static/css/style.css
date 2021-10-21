@@ -36,6 +36,11 @@ body {
   height: 20%;
 }
 
+.info ul
+{
+  padding: 20px;
+}
+
 .row_posters {
   display: flex;
   overflow-y: hidden;

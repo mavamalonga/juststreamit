@@ -49,7 +49,6 @@ function create_top_movie_section(){
   img.setAttributeNode(attr_class);
   div_top_movie.appendChild(img);
 
-
   // div info
   var div_info = document.createElement("div");
   var attr_class = document.createAttribute('class');
