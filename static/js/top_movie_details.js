@@ -17,6 +17,14 @@ function create_details_section(){
   img.setAttributeNode(attr_class);
   div_top_movie.appendChild(img);
 
+  // div info
+  var div_info = document.createElement("div");
+  var attr_class = document.createAttribute('class');
+  attr_class.value = "info";
+  div_info.setAttributeNode(attr_class);
+  div_top_movie.insertBefore(div_info, div_top_movie.children[-1]);
+  div_top_rated.insertBefore(div_top_movie, div_top_rated.children[1]);
+
   // title
   var title = document.createElement('h1');
   var attr_class = document.createAttribute('class');
@@ -25,32 +33,8 @@ function create_details_section(){
   div_top_movie.appendChild(title);
 
   // div contents elements details 
-  var div_details = document.createElement("ul");
-  var attr_class = document.createAttribute("class");
-  attr_class.value = "details";
-
-  // all elements details
-  var genres = document.createElement("li");
-  var release_date = document.createElement("li");
-  var ranted = document.createElement("li");
-  var Imdb = document.createElement("li");
-  var director = document.createElement("li");
-  var list_actors = document.createElement("li");
-  var duration = document.createElement("li");
-  var country_origin = document.createElement("li");
-  var result_box_office= document.createElement("li");
-  var film_summary = document.createElement("li");
-  div_details.appendChild(genres);
-  div_details.appendChild(release_date);
-  div_details.appendChild(ranted);
-  div_details.appendChild(Imdb);
-  div_details.appendChild(director);
-  div_details.appendChild(list_actors);
-  div_details.appendChild(duration);
-  div_details.appendChild(country_origin);
-  div_details.appendChild(result_box_office);
-  div_details.appendChild(film_summary);
-  div_top_movie.appendChild(div_details);
+  var ul = document.createElement("ul");
+  div_top_movie.appendChild(ul);
 
   // button : previous
   var button = document.createElement("input");
@@ -88,10 +72,61 @@ function more_top_movie(){
   // build new div top movie
   create_details_section();
 
+  // get elements
+  var div_top_movie = document.getElementsByClassName('top_movie')[0];
+  var ul =  div_top_movie.querySelectorAll("ul")[0]; 
+  console.log(ul);
+  var poster = div_top_movie.getElementsByClassName("poster")[0];
+  var title = div_top_movie.getElementsByClassName("title")[0];
+  //var genres = div_details.getElementsByClassName("genres")[0]
 
   fetch(url)
     .then(response => response.json())
     .then(data => {
+      // div top movie
+      poster.setAttribute("src", data['image_url']);
+      title.innerHTML = data['title'];
+      div_top_movie.appendChild(poster);
+      div_top_movie.appendChild(title);
+
+      // details
+
+      var long_description = document.createElement("li");
+      long_description.innerHTML = data['long_description'];
+      ul.appendChild(long_description);
+
+      var usa_gross_income = document.createElement("li");
+      usa_gross_income.innerHTML = data['usa_gross_income'];
+      ul.appendChild(usa_gross_income);
+
+      var countries = document.createElement("li");
+      countries.innerHTML = data['countries'];
+      ul.appendChild(countries);
+
+      var duration = document.createElement("li");
+      duration.innerHTML = data['duration'];
+      ul.appendChild(duration);
+
+      var actors = document.createElement("li");
+      actors.innerHTML = data['actors'];
+      ul.appendChild(actors);
+
+      var directors = document.createElement("li");
+      directors.innerHTML = data['directors'];
+      ul.appendChild(directors);
+
+      var imdb_score = document.createElement("li");
+      imdb_score.innerHTML = data['imdb_score'];
+      ul.appendChild(imdb_score);
+
+      var rated = document.createElement("li");
+      rated.innerHTML = data['rated'];
+      ul.appendChild(rated);
+
+      var date_published = document.createElement("li");
+      date_published.innerHTML = data['date_published'];
+      ul.appendChild(date_published);
+
       console.log(data);
       });
 };

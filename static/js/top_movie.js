@@ -49,19 +49,33 @@ function create_top_movie_section(){
   img.setAttributeNode(attr_class);
   div_top_movie.appendChild(img);
 
+
+  // div info
+  var div_info = document.createElement("div");
+  var attr_class = document.createAttribute('class');
+  attr_class.value = "info";
+  div_info.setAttributeNode(attr_class);
+  div_top_movie.insertBefore(div_info, div_top_movie.children[-1]);
+  div_top_rated.insertBefore(div_top_movie, div_top_rated.children[1]);
+
+  //get div top movie and div info
+  var div_top_movie = document.getElementsByClassName("top_movie")[0];
+  var div_info = document.getElementsByClassName("info")[0];
+
   // title
   var title = document.createElement('h1');
   var attr_class = document.createAttribute('class');
   attr_class.value = "title";
   title.setAttributeNode(attr_class);
-  div_top_movie.appendChild(title);
+  div_info.appendChild(title);
 
   // description
   var description = document.createElement("p");
   var attr_class = document.createAttribute("class");
   attr_class.value = "description";
   description.setAttributeNode(attr_class);
-  div_top_movie.appendChild(description);
+  div_info.appendChild(description);
+
 
   // button : more
   var button = document.createElement("input");
@@ -77,19 +91,20 @@ function create_top_movie_section(){
   button.setAttributeNode(attr_class);
   button.setAttributeNode(attr_onclick);
   button.setAttributeNode(attr_value);
-  div_top_movie.appendChild(button);
+  div_info.appendChild(button);
 
   // insert elemnets
-  div_top_rated.insertBefore(div_top_movie, div_top_rated.children[1]);
+  //div_top_rated.insertBefore(div_top_movie, div_top_rated.children[1]);
 }
 
 function get_data_best_movie(movie_id){
   var endpoint = "http://localhost:8000/api/v1/titles/"
   var url = endpoint.concat('', movie_id);
   var div_top_movie = document.getElementsByClassName('top_movie')[0];
+  var div_info = document.getElementsByClassName('info')[0];
   var poster = div_top_movie.getElementsByClassName("poster")[0];
-  var title = div_top_movie.getElementsByClassName("title")[0];
-  var description = div_top_movie.getElementsByClassName("description")[0];
+  var title = div_info.getElementsByClassName("title")[0];
+  var description = div_info.getElementsByClassName("description")[0];
   var button = div_top_movie.getElementsByClassName("btn_more")[0];
   fetch(url)
     .then(response => response.json())
@@ -98,10 +113,11 @@ function get_data_best_movie(movie_id){
       title.innerHTML = data['title'];
       description.innerHTML = data['description'];
       button.setAttribute("id", `${movie_id}`);
+      div_info.appendChild(title);
+      div_info.appendChild(description);
       div_top_movie.appendChild(poster);
-      div_top_movie.appendChild(title);
-      div_top_movie.appendChild(description);
-      div_top_movie.appendChild(button);
+      div_top_movie.appendChild(div_info);
+      div_info.appendChild(button);
     });
 };
 

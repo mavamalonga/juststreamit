@@ -8,6 +8,34 @@ body {
   background-color: #111;
 }
 
+.top_movie 
+{
+  display: flex;
+  padding: 20px;
+}
+
+.info 
+{
+  padding: 20px;
+ flex-direction: column; 
+}
+
+.info h1
+{
+  padding: 20px;
+}
+
+.info p
+{
+  padding: 20px;
+}
+
+.info input
+{
+  width: 20%;
+  height: 20%;
+}
+
 .row_posters {
   display: flex;
   overflow-y: hidden;
