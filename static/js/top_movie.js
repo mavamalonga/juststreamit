@@ -1,4 +1,4 @@
-var url = "http://localhost:8000/api/v1/titles/?imdb_score_min=9.5&imdb_score_max=10"
+const url_top_movie = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 
 function select_movie_imdb_max(url){
   return fetch(url).then(function(response) {
@@ -8,7 +8,7 @@ function select_movie_imdb_max(url){
   });
 }
 
-function choice_best_movie(movies){
+function select_movie_max_votes(movies){
   var max_votes = 0;
   var movie_id = 0;
   for (let i = 0; i < movies.length; i++) {
@@ -110,7 +110,7 @@ function get_data_best_movie(movie_id){
     .then(data => {
       poster.setAttribute("src", data['image_url']);
       title.innerHTML = data['title'];
-      description.innerHTML = data['description'];
+      description.innerHTML = `Description  <br><br> ${data['description']}`;
       button.setAttribute("id", `${movie_id}`);
       div_info.appendChild(title);
       div_info.appendChild(description);
@@ -122,8 +122,8 @@ function get_data_best_movie(movie_id){
 
 
 function top_movie(){
-  select_movie_imdb_max(url).then(function(result) {
-      movie_id = choice_best_movie(result['results']);
+  select_movie_imdb_max(url_top_movie).then(function(result) {
+      movie_id = select_movie_max_votes(result['results']);
       create_top_movie_section();
       get_data_best_movie(movie_id);
 

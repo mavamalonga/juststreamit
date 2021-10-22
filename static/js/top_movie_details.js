@@ -94,39 +94,39 @@ function more_top_movie(){
       // details
 
       var long_description = document.createElement("li");
-      long_description.innerHTML = data['long_description'];
+      long_description.innerHTML = `Long description <br>${data['long_description']} <br><br>`;
       ul.appendChild(long_description);
 
       var usa_gross_income = document.createElement("li");
-      usa_gross_income.innerHTML = data['usa_gross_income'];
+      usa_gross_income.innerHTML = `Usa gross income ${data['usa_gross_income']}`;
       ul.appendChild(usa_gross_income);
 
       var countries = document.createElement("li");
-      countries.innerHTML = data['countries'];
+      countries.innerHTML = `Countries ${data['countries']}`;
       ul.appendChild(countries);
 
       var duration = document.createElement("li");
-      duration.innerHTML = data['duration'];
+      duration.innerHTML = `Duration ${data['duration']}`;
       ul.appendChild(duration);
 
       var actors = document.createElement("li");
-      actors.innerHTML = data['actors'];
+      actors.innerHTML = `Actors ${data['actors']}`;
       ul.appendChild(actors);
 
       var directors = document.createElement("li");
-      directors.innerHTML = data['directors'];
+      directors.innerHTML = `Directors ${data['directors']}`;
       ul.appendChild(directors);
 
       var imdb_score = document.createElement("li");
-      imdb_score.innerHTML = data['imdb_score'];
+      imdb_score.innerHTML = `Imdb score ${data['imdb_score']}`;
       ul.appendChild(imdb_score);
 
       var rated = document.createElement("li");
-      rated.innerHTML = data['rated'];
+      rated.innerHTML = `Ranted ${data['rated']}`;
       ul.appendChild(rated);
 
       var date_published = document.createElement("li");
-      date_published.innerHTML = data['date_published'];
+      date_published.innerHTML = `Date published ${data['date_published']}`;
       ul.appendChild(date_published);
 
       title.innerHTML = data['title'];
@@ -137,7 +137,5 @@ function more_top_movie(){
       div_info.appendChild(button);
 
       div_top_movie.appendChild(div_info);
-
-      console.log(data);
       });
 };
