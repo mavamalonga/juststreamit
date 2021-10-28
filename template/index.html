@@ -4,8 +4,9 @@
 	<meta charset="utf-8">
 	<title>Home page</title>
   <link rel="stylesheet" href="../static/css/style.css">
-  <script type="text/javascript" src="../static/js/top_movie.js"></script>
-  <script type="text/javascript" src="../static/js/top_movie_details.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/css/slider.css">
+  <script type="text/javascript" src="../static/js/movie_imdb_max.js"></script>
+  <script type="text/javascript" src="../static/js/movie_imdb_max_info.js"></script>
 </head>
 <body onload="top_movie()">
 <div class="top_rated">
@@ -15,43 +16,37 @@
   <h2>The best rated films</h2>
   <div class="row_posters">
   </div>
-  <script type="text/javascript" src="../static/js/the_best_movies_ranted.js"></script>
+  <script type="text/javascript" src="../static/js/movies_ranted_max.js"></script>
 </div>
-<div class="row">
-  <h2>The best rated films</h2>
-  <div class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
+<div class="thumbnail-slider">
+  <!-- controls sliders -->
+  <button onclick="moveLeft(this)" id="-1" class="btn-ranted-lt">&lt</button>
+  <button onclick="moveRight(this)" id="1" class="btn-ranted-gt">&gt</button>
+  <div class="thumbnail-container">
+    <div class="item">
+      <img src="../static/img/movie.jpg" alt="" class="row_posters">
+    </div>
+    <div class="item">
+      <img src="../static/img/movie.jpg" alt="" class="row_posters">
+    </div>
+    <div class="item">
+      <img src="../static/img/movie.jpg" alt="" class="row_posters">
+    </div>
+    <div class="item">
+      <img src="../static/img/movie.jpg" alt="" class="row_posters">
+    </div>
+    <div class="item">
+      <img src="../static/img/movie.jpg" alt="" class="row_posters">
+    </div>
+    <div class="item">
+      <img src="../static/img/movie.jpg" alt="" class="row_posters">
+    </div>
+    <div class="item">
+      <img src="../static/img/movie.jpg" alt="" class="row_posters">
+    </div>
   </div>
+   <script type="text/javascript" src="../static/js/slider.js"></script>
 </div>
-<div class="row">
-  <h2>Comedy films</h2>
-  <div class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-  </div>
-</div>
-<div class="row">
-  <h2>Horror film</h2>
-  <div class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-    <img src="../static/img/movie.jpg" alt="" class="row_posters">
-  </div>
 </div>
 </body>
 </html>

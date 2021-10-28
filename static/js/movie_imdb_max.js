@@ -1,14 +1,14 @@
 const url_top_movie = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 
-function select_movie_imdb_max(url){
-  return fetch(url).then(function(response) {
+function select_movie_imdb_max(url_top_movie){
+  return fetch(url_top_movie).then(function(response) {
     return response.json();
   }).then(function(json) {
     return json;
   });
 }
 
-function select_movie_max_votes(movies){
+function choice_movie_max_votes(movies){
   var max_votes = 0;
   var movie_id = 0;
   for (let i = 0; i < movies.length; i++) {
@@ -22,7 +22,7 @@ function select_movie_max_votes(movies){
   return movie_id;
 };
 
-function create_top_movie_section(){
+function create_dom_elements(){
 
   // delete div top movie if exist
   try {
@@ -97,6 +97,8 @@ function create_top_movie_section(){
 }
 
 function get_data_best_movie(movie_id){
+
+  // get elements html
   var endpoint = "http://localhost:8000/api/v1/titles/"
   var url = endpoint.concat('', movie_id);
   var div_top_movie = document.getElementsByClassName('top_movie')[0];
@@ -105,9 +107,13 @@ function get_data_best_movie(movie_id){
   var title = div_info.getElementsByClassName("title")[0];
   var description = div_info.getElementsByClassName("description")[0];
   var button = div_top_movie.getElementsByClassName("btn_more")[0];
+
+  // request api get data movie
   fetch(url)
     .then(response => response.json())
     .then(data => {
+
+      // insert data in html elements
       poster.setAttribute("src", data['image_url']);
       title.innerHTML = data['title'];
       description.innerHTML = `Description  <br><br> ${data['description']}`;
@@ -123,8 +129,8 @@ function get_data_best_movie(movie_id){
 
 function top_movie(){
   select_movie_imdb_max(url_top_movie).then(function(result) {
-      movie_id = select_movie_max_votes(result['results']);
-      create_top_movie_section();
+      movie_id = choice_movie_max_votes(result['results']);
+      create_dom_elements();
       get_data_best_movie(movie_id);
 
     });
