@@ -13,8 +13,9 @@ function main_movies_max_ranted(){
 	const url_page_2 = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page=2"
 
 	// get parent node
-	var row_best_ranted = document.getElementsByClassName("row")[0];
-	var raw_posters = row_best_ranted.getElementsByClassName("row_posters")[0];
+	var container_ = document.getElementsByClassName("thumbnail-slider")[0];
+	var allBox_ = container_.getElementsByClassName("thumbnail-container")[0];
+	var items_ = allBox_.getElementsByClassName('item');
 
 	// variables 
 	var nb_movies_added  = 0;
@@ -24,14 +25,9 @@ function main_movies_max_ranted(){
 		select_movies_max_ranted(url_).then(function(result) {
   			for (let i = 0; i < result['results'].length; i++){
   				if (nb_movies_added < 7 && result['results'][i]['id'] !== best_move_id){
-	  				var poster = document.createElement('img');
-				  	var attr_class = document.createAttribute('class');
-				  	attr_class.value = "row_posters";
-				  	poster.setAttributeNode(attr_class);
-				  	var attr_src = document.createAttribute('src');
-				  	attr_src.value = `${result['results'][i]['image_url']}`;
-				  	poster.setAttributeNode(attr_src);
-				  	raw_posters.appendChild(poster);
+  					// update item
+  					img = items_[i].getElementsByTagName("img")[0];
+  					img.src = `${result['results'][i]['image_url']}`
 			  }
 			  nb_movies_added++;
   			}
