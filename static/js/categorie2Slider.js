@@ -1,12 +1,16 @@
-const categorie2 = document.getElementsByClassName("categorie2")[0];
-const categorie2Contains = categorie2.getElementsByClassName("categorie2-container")[0];
-const categorie2AllItems = categorie2Contains.getElementsByClassName("item");
-var categorie2LastDirection = -1;
+const container2 = document.querySelector(".thumbnail-container2");
+const allBox2 = container2.children;
+const containerWidth2 = container2.offsetWidth; // la sum de la taille en pixels de tout les items
+const margin2 = 30;
+var items2 = 0;
+var totalItems2 = 0;
+var jumpSlideWidth2 = 0;
+var lastDirection2 = -1;
 
 
 // item setup per slide
 
-responsive = [
+responsive2 = [
   {breakPoint: {width:0, item:1}}, //if with greater than 0 (1 will item show)
   {breakPoint: {width:600, item:2}}, //if width greater than 600 (2 will item show)
   {breakPoint: {width:1000, item:4}} //if width greater than 1000 (4 will item show)
@@ -14,55 +18,61 @@ responsive = [
 
 // load selectionne le nb items a afficher en fonction de la taille de l'écran
 
-function categorie2Load(){
-  for(i=0; i<responsive.length; i++){
-    if(window.innerWidth>responsive[i].breakPoint.width){
-      items=responsive[i].breakPoint.item
+function load2(){
+  for(i=0; i<responsive2.length; i++){
+    console.log(responsive)
+    console.log(items)
+
+    if(window.innerWidth>responsive2[i].breakPoint.width){
+      items2=responsive2[i].breakPoint.item
     }
   }
-  categorie2Start();
+  start2();
 }
 
-function categorie2Start(){
-  var totalItemsWidth = 0;
-  for(let i=0; i<categorie2AllItems.length; i++){
+function start2(){
+  var totalItemsWidth2 = 0;
+  for(let i=0; i<allBox2.length; i++){
     // width and margin setup of items
-    categorie2AllItems[i].style.width = (containerWidth/items) - margin +  "px";
-    categorie2AllItems[i].style.margin = (margin/2) + "px";
-    totalItemsWidth += containerWidth/items;
-    totalItems++;
+    if (allBox2[i].getAttribute('class') == 'item'){
+      allBox2[i].style.width = (containerWidth2/items2) - margin2 +  "px";
+      allBox2[i].style.margin = (margin2/2) + "px";
+      totalItemsWidth2 += containerWidth2/items2;
+      totalItems2++;
+    }
   }
 
   // thumbnail-container width set up
-  categorie2Contains.style.width = totalItemsWidth + "px";
+  container2.style.width = totalItemsWidth2 + "px";
 
   // sliders controls number set up
-  const allSlides = Math.ceil(totalItems/items);
+  const allSlides2 = Math.ceil(totalItems2/items2);
 }
 
 
-function categorie2MoveRight(ele){
-  var itemWidth = 290; 
-  if (items == 4 && categorie2LastDirection == -1){
-    console.log("Right Ok");
-    var numb = ele.id;
-      jumpSlideWidth = jumpSlideWidth + (containerWidth*numb);
-    categorie2Contains.style.marginLeft =- jumpSlideWidth + itemWidth + margin + "px";
+function moveRight2(ele){
 
-    categorie2LastDirection = 1;
+  var itemWidth2 = 290; 
+  if (items2 == 4 && lastDirection2 == -1){
+    var numb2 = ele.id;
+      jumpSlideWidth2 = jumpSlideWidth2 + (containerWidth2*numb2);
+    container2.style.marginLeft =- jumpSlideWidth2 + itemWidth2 + margin2 + "px";
+
+    lastDirection2 = 1;
   }
 }
 
-function categorie2MoveLeft(ele){
-  if(items == 4 && categorie2LastDirection == 1){
-    var numb=ele.id;
-      jumpSlideWidth = jumpSlideWidth + (containerWidth*numb);
-    categorie2Contains.style.marginLeft =- jumpSlideWidth + "px";
+function moveLeft2(ele){
 
-    categorie2LastDirection = -1;
+  if(items2 == 4 && lastDirection2 == 1){
+    var numb2=ele.id;
+      jumpSlideWidth2 = jumpSlideWidth2 + (containerWidth2*numb2);
+    container2.style.marginLeft =- jumpSlideWidth2 + "px";
+
+    lastDirection2 = -1;
   }
 }
 
-categorie2Load();
+load2();
 
 //window.onload = load();

@@ -8,25 +8,26 @@ body {
   box-sizing: border-box;
 }
 
-.categorie2 {
+.thumbnail-slider2 {
+  position: relative;
   width: 100%;
   float: left;
   overflow: hidden;
 }
 
-.categorie2 .categorie2-container {
+.thumbnail-slider2 .thumbnail-container2 {
   width: 100%;
   float: left;
   transition: margin 1s ease;
 }
 
-.categorie2 .item {
+.thumbnail-slider2 .item {
   height: 268px;
   background-color: grey;
   float: left;
 }
 
-.categorie2 .item img{
+.thumbnail-slider2 .item img{
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -41,18 +42,22 @@ body {
 }
 
 .btn-ranted-lt {
-  position: relative;
-  top: 282px;
-  width: 30px;
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  left: 0;
+  width: 3%;
   height: 268px;
   float: left;
 }
 
 
 .btn-ranted-gt {
-  position: relative;
-  top: 282px;
-  width: 30px;
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  right: 0;
+  width: 3%;
   height: 268px;
   float: right;
 }

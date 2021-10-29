@@ -1,4 +1,3 @@
-const controls = document.querySelector(".controls");
 const container = document.querySelector(".thumbnail-container");
 const allBox = container.children;
 const containerWidth = container.offsetWidth; // la sum de la taille en pixels de tout les items
@@ -32,7 +31,6 @@ function start(){
   var totalItemsWidth = 0;
   for(let i=0; i<allBox.length; i++){
     // width and margin setup of items
-    console.log(allBox[i].getAttribute('class'))
     if (allBox[i].getAttribute('class') == 'item'){
       allBox[i].style.width = (containerWidth/items) - margin +  "px";
       allBox[i].style.margin = (margin/2) + "px";
