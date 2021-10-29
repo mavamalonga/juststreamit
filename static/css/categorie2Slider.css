@@ -8,25 +8,25 @@ body {
   box-sizing: border-box;
 }
 
-.thumbnail-slider {
+.categorie2 {
   width: 100%;
   float: left;
   overflow: hidden;
 }
 
-.thumbnail-slider .thumbnail-container {
+.categorie2 .categorie2-container {
   width: 100%;
   float: left;
   transition: margin 1s ease;
 }
 
-.thumbnail-slider .item {
+.categorie2 .item {
   height: 268px;
   background-color: grey;
   float: left;
 }
 
-.thumbnail-slider .item img{
+.categorie2 .item img{
   display: block;
   margin-left: auto;
   margin-right: auto;

@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Home page</title>
-  <!--<link rel="stylesheet" href="../static/css/style.css">-->
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thumnail slider</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/categorie1.css">
 </head>
 <body>
-<div class="top_rated">
-  <h2>Top rated film </h2>
-</div>
-<div class="thumbnail-slider">
-   <!-- controls sliders -->
-  <button onclick="moveLeft(this)" id="-1" class="btn-ranted-lt">&lt</button>
-  <button onclick="moveRight(this)" id="1" class="btn-ranted-gt">&gt</button>
-  <div class="thumbnail-container">
+  <div class="thumbnail-slider">
+    <div class="thumbnail-container">
       <div class="item">
         <img src="">
       </div>
@@ -35,10 +29,12 @@
        <div class="item">
         <img src="">
       </div>
+       <!-- controls sliders -->
+      <button onclick="moveLeft(this)" id="-1" class="btn-ranted-lt">&lt</button>
+      <button onclick="moveRight(this)" id="1" class="btn-ranted-gt">&gt</button>
+    </div>
   </div>
-</div>
-<script type="text/javascript" src="../static/js/movies_ranted_max.js"></script>
-<script type="text/javascript" src="../static/js/slider.js"></script>
-<link rel="stylesheet" type="text/css" href="../static/css/slider.css">
+  <script type="text/javascript" src="../static/js/categorie1Slider.js"></script>
+  <script type="text/javascript" src="../static/js/categorie1Api.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
-const slider = document.getElementsByClassName("thumbnail-slider")[0];
-const container = slider.getElementsByClassName("thumbnail-container")[0];
-const allBox = container.getElementsByClassName("item");
+const controls = document.querySelector(".controls");
+const container = document.querySelector(".thumbnail-container");
+const allBox = container.children;
 const containerWidth = container.offsetWidth; // la sum de la taille en pixels de tout les items
 const margin = 30;
 var items = 0;
@@ -25,21 +25,20 @@ function load(){
       items=responsive[i].breakPoint.item
     }
   }
-  console.log("before load");
   start();
-  console.log("after star")
 }
 
 function start(){
-  console.log("star begin");
-  console.log(" allBox.length :" + allBox[0])
   var totalItemsWidth = 0;
   for(let i=0; i<allBox.length; i++){
     // width and margin setup of items
-    allBox[i].style.width = (containerWidth/items) - margin +  "px";
-    allBox[i].style.margin = (margin/2) + "px";
-    totalItemsWidth += containerWidth/items;
-    totalItems++;
+    console.log(allBox[i].getAttribute('class'))
+    if (allBox[i].getAttribute('class') == 'item'){
+      allBox[i].style.width = (containerWidth/items) - margin +  "px";
+      allBox[i].style.margin = (margin/2) + "px";
+      totalItemsWidth += containerWidth/items;
+      totalItems++;
+    }
   }
 
   // thumbnail-container width set up
