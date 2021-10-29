@@ -1,5 +1,5 @@
 
-function selectComicalMovies(request_url){
+function selectAdventureMovies(request_url){
   return fetch(request_url).then(function(response) {
     return response.json();
   }).then(function(json) {
@@ -7,10 +7,10 @@ function selectComicalMovies(request_url){
   });
 }
 
-function mainComicalMovies(){
+function mainAdventureMovies(){
 	// urls variables 
-	const urlPage1 = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
-	const urlPage2 = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page=2"
+	const urlPage1 = "http://localhost:8000/api/v1/titles/?genre=adventure&sort_by=-imdb_score"
+	const urlPage2 = "http://localhost:8000/api/v1/titles/?genre=adventure&sort_by=-imdb_score&page=2"
 
 	// get parent node
 	var container3 = document.getElementsByClassName("thumbnail-slider3")[0];
@@ -18,20 +18,20 @@ function mainComicalMovies(){
 	var items3 = allBox3.getElementsByClassName('item');
 
 	// variables 
-	var nbComicalMoviesAdded  = 0;
+	var nbAdventureMoviesAdded  = 0;
 
-	for (urlComicalPage of [urlPage1, urlPage2]){
-		selectComicalMovies(urlComicalPage).then(function(result) {
+	for (urlAdventurePage of [urlPage1, urlPage2]){
+		selectAdventureMovies(urlAdventurePage).then(function(result) {
   			for (let i = 0; i < result['results'].length; i++){
-  				if (nbComicalMoviesAdded < 7){
+  				if (nbAdventureMoviesAdded < 7){
   					// update item
-  					img = items3[i].getElementsByTagName("img")[0];
+  					img = items3[nbAdventureMoviesAdded].getElementsByTagName("img")[0];
   					img.src = `${result['results'][i]['image_url']}`
-			  }
-			  nbComicalMoviesAdded++;
+			  	}
+			    nbAdventureMoviesAdded++;
   			}
    		});	
 	}
 }
 
-mainComicalMovies();
+mainAdventureMovies();

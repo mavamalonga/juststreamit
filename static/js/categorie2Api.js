@@ -9,8 +9,8 @@ function selectActionMovies(request_url){
 
 function mainActionMovies(){
 	// urls variables 
-	const urlPage1 = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
-	const urlPage2 = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page=2"
+	const urlPage1 = "http://localhost:8000/api/v1/titles/?genre=action&sort_by=-imdb_score"
+	const urlPage2 = "http://localhost:8000/api/v1/titles/?genre=action&sort_by=-imdb_score&page=2"
 
 	// get parent node
 	var container2 = document.getElementsByClassName("thumbnail-slider2")[0];
@@ -25,10 +25,10 @@ function mainActionMovies(){
   			for (let i = 0; i < result['results'].length; i++){
   				if (nbActionMoviesAdded < 7){
   					// update item
-  					img = items2[i].getElementsByTagName("img")[0];
+  					img = items2[nbActionMoviesAdded].getElementsByTagName("img")[0];
   					img.src = `${result['results'][i]['image_url']}`
-			  }
-			  nbActionMoviesAdded++;
+			    }
+			    nbActionMoviesAdded++;
   			}
    		});	
 	}

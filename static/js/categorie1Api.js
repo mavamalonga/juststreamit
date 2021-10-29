@@ -26,10 +26,10 @@ function main_movies_max_ranted(){
   			for (let i = 0; i < result['results'].length; i++){
   				if (nb_movies_added < 7 && result['results'][i]['id'] !== best_move_id){
   					// update item
-  					img = items_[i].getElementsByTagName("img")[0];
+  					img = items_[nb_movies_added].getElementsByTagName("img")[0];
   					img.src = `${result['results'][i]['image_url']}`
-			  }
-			  nb_movies_added++;
+			    }
+			    nb_movies_added++;
   			}
    		});	
 	}
