@@ -1,0 +1,32 @@
+.thumbnail-slider4 {
+  position: relative;
+  width: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+.thumbnail-slider4 .thumbnail-container4 {
+  width: 100%;
+  float: left;
+  transition: margin 1s ease;
+}
+
+.thumbnail-slider4 .item {
+  height: 268px;
+  background-color: grey;
+  float: left;
+}
+
+.thumbnail-slider4 .item img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 182px;
+
+  height: 268px;
+  background-color: grey;
+  line-height: 250px;
+  text-align: center;
+  font-size: 50px;
+  color: #ffffff;
+}
