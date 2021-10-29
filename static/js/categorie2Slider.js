@@ -6,8 +6,6 @@ var items2 = 0;
 var totalItems2 = 0;
 var jumpSlideWidth2 = 0;
 var lastDirection2 = -1;
-
-
 // item setup per slide
 
 responsive2 = [
@@ -20,9 +18,6 @@ responsive2 = [
 
 function load2(){
   for(i=0; i<responsive2.length; i++){
-    console.log(responsive)
-    console.log(items)
-
     if(window.innerWidth>responsive2[i].breakPoint.width){
       items2=responsive2[i].breakPoint.item
     }
