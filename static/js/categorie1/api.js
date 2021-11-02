@@ -13,8 +13,8 @@ function main_movies_max_ranted(){
 	const url_page_2 = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page=2"
 
 	// get parent node
-	var container_ = document.getElementsByClassName("thumbnail-slider")[0];
-	var allBox_ = container_.getElementsByClassName("thumbnail-container")[0];
+	var container_ = document.getElementsByClassName("parent")[0];
+	var allBox_ = container_.getElementsByClassName("child")[0];
 	var items_ = allBox_.getElementsByClassName('item');
 
 	// variables 
@@ -28,6 +28,8 @@ function main_movies_max_ranted(){
   					// update item
   					img = items_[nb_movies_added].getElementsByTagName("img")[0];
   					img.src = `${result['results'][i]['image_url']}`
+  					title = items_[nb_movies_added].getElementsByClassName('title')[0];
+  					title.innerHTML = `${result['results'][i]['title']}`;
 			    }
 			    nb_movies_added++;
   			}
