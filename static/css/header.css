@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  height: 100px;
+} 
+
+.header .child {
+  position: relative;
+  background-color: grey;
+}
+
+.header .child .logo {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  left: 10px;
+}
+
+.header .child .link1 {
+  position: absolute;
+  left: 300px;
+}
+
+.header .child .link2 {
+  position: absolute;
+  left: 400px;
+}
+

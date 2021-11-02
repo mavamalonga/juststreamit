@@ -1,0 +1,31 @@
+.top-movie-parent {
+  height: 300px;
+  width: 100%;
+}
+.top-movie-parent .item {
+  position: relative;
+  background-color: black;
+  width: 760px;
+  left: 230px;
+  right: 230px;
+  color: white;
+}
+
+.top-movie-parent .item h1 {
+  position: absolute;
+  top: 0;
+  left: 200px;
+}
+
+.top-movie-parent .item .description {
+  position: absolute;
+  left: 200px;
+  top: 100px;
+  width: 400px;
+}
+
+.top-movie-parent .item .btn-more {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}

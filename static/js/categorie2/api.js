@@ -13,8 +13,8 @@ function mainActionMovies(){
 	const urlPage2 = "http://localhost:8000/api/v1/titles/?genre=action&sort_by=-imdb_score&page=2"
 
 	// get parent node
-	var container2 = document.getElementsByClassName("thumbnail-slider2")[0];
-	var allBox2 = container2.getElementsByClassName("thumbnail-container2")[0];
+	var container2 = document.getElementsByClassName("parent2")[0];
+	var allBox2 = container2.getElementsByClassName("child2")[0];
 	var items2 = allBox2.getElementsByClassName('item');
 
 	// variables 
@@ -27,6 +27,9 @@ function mainActionMovies(){
   					// update item
   					img = items2[nbActionMoviesAdded].getElementsByTagName("img")[0];
   					img.src = `${result['results'][i]['image_url']}`
+  					title = items2[nbActionMoviesAdded].getElementsByClassName('title')[0];
+  					console.log(title);
+  					title.innerHTML = `${result['results'][i]['title']}`;
 			    }
 			    nbActionMoviesAdded++;
   			}
