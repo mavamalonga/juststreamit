@@ -13,8 +13,8 @@ function mainAnimationMovies(){
 	const urlPage2 = "http://localhost:8000/api/v1/titles/?genre=animation&sort_by=-imdb_score&page=2"
 
 	// get parent node
-	var container4 = document.getElementsByClassName("thumbnail-slider4")[0];
-	var allBox4 = container4.getElementsByClassName("thumbnail-container4")[0];
+	var container4 = document.getElementsByClassName("parent4")[0];
+	var allBox4 = container4.getElementsByClassName("child4")[0];
 	var items4 = allBox4.getElementsByClassName('item');
 
 	// variables 
@@ -26,7 +26,9 @@ function mainAnimationMovies(){
   				if (nbAnimationMoviesAdded < 7){
   					// update item
   					img = items4[nbAnimationMoviesAdded].getElementsByTagName("img")[0];
-  					img.src = `${result['results'][i]['image_url']}`
+  					img.src = `${result['results'][i]['image_url']}`;
+  					title = items4[nbAnimationMoviesAdded].getElementsByClassName('title')[0];
+  					title.innerHTML = `${result['results'][i]['title']}`;
 			    }
 			    nbAnimationMoviesAdded++;
   			}
