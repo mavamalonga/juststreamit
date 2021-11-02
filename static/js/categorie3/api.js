@@ -13,8 +13,8 @@ function mainAdventureMovies(){
 	const urlPage2 = "http://localhost:8000/api/v1/titles/?genre=adventure&sort_by=-imdb_score&page=2"
 
 	// get parent node
-	var container3 = document.getElementsByClassName("thumbnail-slider3")[0];
-	var allBox3 = container3.getElementsByClassName("thumbnail-container3")[0];
+	var container3 = document.getElementsByClassName("parent3")[0];
+	var allBox3 = container3.getElementsByClassName("child3")[0];
 	var items3 = allBox3.getElementsByClassName('item');
 
 	// variables 
@@ -26,7 +26,9 @@ function mainAdventureMovies(){
   				if (nbAdventureMoviesAdded < 7){
   					// update item
   					img = items3[nbAdventureMoviesAdded].getElementsByTagName("img")[0];
-  					img.src = `${result['results'][i]['image_url']}`
+  					img.src = `${result['results'][i]['image_url']}`;
+  					title = items3[nbAdventureMoviesAdded].getElementsByClassName('title')[0];
+  					title.innerHTML = `${result['results'][i]['title']}`;
 			  	}
 			    nbAdventureMoviesAdded++;
   			}

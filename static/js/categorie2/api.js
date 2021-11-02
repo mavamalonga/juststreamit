@@ -28,7 +28,6 @@ function mainActionMovies(){
   					img = items2[nbActionMoviesAdded].getElementsByTagName("img")[0];
   					img.src = `${result['results'][i]['image_url']}`
   					title = items2[nbActionMoviesAdded].getElementsByClassName('title')[0];
-  					console.log(title);
   					title.innerHTML = `${result['results'][i]['title']}`;
 			    }
 			    nbActionMoviesAdded++;
