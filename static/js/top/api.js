@@ -38,7 +38,7 @@ function extractDataTopMovie(movieId){
   const img = item.getElementsByTagName('img')[0];
   var title = item.getElementsByClassName("title")[0];
   var description = item.getElementsByClassName("description")[0];
-  var button = item.getElementsByClassName("btn-more")[0];
+  var button = item.getElementsByClassName("btn-more")[0].children[0];
 
   // get data from api
   fetch(urlTopMovie)

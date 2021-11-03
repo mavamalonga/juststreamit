@@ -16,6 +16,7 @@
 }
 .parent4 .child4 img {
   margin: 2px;
+  cursor: pointer;
 }
 .btn-ranted-gt {
   cursor: pointer;

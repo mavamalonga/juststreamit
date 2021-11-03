@@ -30,6 +30,8 @@ function main_movies_max_ranted(){
   					img.src = `${result['results'][i]['image_url']}`
   					title = items_[nb_movies_added].getElementsByClassName('title')[0];
   					title.innerHTML = `${result['results'][i]['title']}`;
+  					img.setAttribute('onclick', 'moreAboutMovie(this)');
+  					img.setAttribute("id", `${result['results'][i]['id']}`);
 			    }
 			    nb_movies_added++;
   			}

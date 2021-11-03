@@ -1,3 +1,6 @@
+*{
+  background-color: black;
+}
 .parent {
   transition: margin 5s ease;
   position: relative;
@@ -15,6 +18,7 @@
 }
 .parent .child img {
   margin: 2px;
+  cursor: pointer;
 }
 .btn-ranted-gt {
   cursor: pointer;

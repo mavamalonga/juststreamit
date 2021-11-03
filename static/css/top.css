@@ -3,25 +3,34 @@
   width: 100%;
 }
 .top-movie-parent .item {
+  color: white;
   position: relative;
   background-color: black;
-  width: 760px;
-  left: 230px;
-  right: 230px;
-  color: white;
+  width: 100%
+  height: 100%;
 }
 
 .top-movie-parent .item h1 {
   position: absolute;
+  width: 100%;
+  height: 30%;
+  font-size: 5em;
   top: 0;
   left: 200px;
 }
 
+.top-movie-parent .item img {
+  position: absolute;
+  width: 219px;
+  height: 298px;
+  right: 20%;
+}
+
 .top-movie-parent .item .description {
   position: absolute;
+  width: 50%;
   left: 200px;
-  top: 100px;
-  width: 400px;
+  top: 60%;
 }
 
 .top-movie-parent .item .btn-more {

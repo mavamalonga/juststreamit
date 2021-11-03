@@ -3,20 +3,24 @@
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
   <title>Index</title>
-  <link rel="stylesheet" type="text/css" href="../static/css/header.css">
+  <!--<link rel="stylesheet" type="text/css" href="../static/css/header.css">-->
   <link rel="stylesheet" type="text/css" href="../static/css/top.css">
   <link rel="stylesheet" type="text/css" href="../static/css/categorie1.css">
   <link rel="stylesheet" type="text/css" href="../static/css/categorie2.css">
   <link rel="stylesheet" type="text/css" href="../static/css/categorie3.css">
   <link rel="stylesheet" type="text/css" href="../static/css/categorie4.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/moreAboutMovie.css">
+  <script type="text/javascript" src="../static/js/moreAboutMovie.js"></script>
 </head>
 <body>
   <!-- Header -->
   <header class="header">
     <div class="child">
-      <img src="../static/img/juststreamit.png" class="logo">
-      <!--<a href="#" class="link1">Acceuil</a>
-     <a href="#" class="link2">Categories</a>-->
+      <!--
+      <img src="#" class="logo">
+      <a href="#" class="link1">Acceuil</a>
+      <a href="#" class="link2">Categories</a>
+      -->
     </div>
   </header>
 
@@ -27,8 +31,9 @@
       <h1 class="title"></h1>
       <div class="description"></div>
       <div class="btn-more">
-        <button>More</button>
+        <button onclick="moreAboutMovie(this)">More</button>
       </div>
+      <script type="text/javascript" src="../static/js/moreAboutMovie.js"></script>
     </div>
   </div>
   <script type="text/javascript" src="../static/js/top/api.js"></script>
