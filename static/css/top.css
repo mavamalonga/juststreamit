@@ -12,28 +12,28 @@
 .top-movie-parent .item img {
   position: absolute;
   top: 0;
-  left: 240px;
+  /*left: 240px;*/
+  left: 20%;
   width: 219px;
   height: 100%;
 }
 .top-movie-parent .item h1 {
   position: absolute;
   top: 0;
-  left: 480px;
-  width: 100%;
+  left: 40%;
   font-size: 5em;
 }
 
 .top-movie-parent .item .description {
   position: absolute;
   top: 150px;
-  left: 480px;
+  left: 40%;
   width: 40%;
 }
 
 .top-movie-parent .item .btn-more {
   position: absolute;
-  left: 480px;
+  left: 40%;
   top: 230px;
 }
 .top-movie-parent .item .btn-more button {
