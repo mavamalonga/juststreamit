@@ -1,67 +1,42 @@
-.info-parent .reader {
+.info-parent {
 	width: 100%;
-}
-.info-parent .info-child {
+	color: white;
 	position: relative;
-	margin: 2%;
-	width: 96%;
-	font-family: arial;
 }
-.info-parent .info-child h1 {
+.info-parent img {
 	position: absolute;
-	top: 0;
+	top: 30px;
+	left: 30px;
+	width: 202px;
+	height: 288px;
+}
+.info-parent h1 {
+	color: white;
+	position: absolute;
+	top: 30;
 	left: 268px;
 }
-.info-parent .info-child .description {
-	position: absolute;
+.info-parent .description {
 	color: grey;
-	width: 70%;
+	position: absolute;
+	width: 50%;
 	top: 50px;
 	left: 268px;
 }
-.info-parent .info-child .genres {
-	position: absolute;
-	top: 150px;
-	left: 268px;
-}
-.info-parent .info-child .actors {
+.info-parent .info-child {
 	position: absolute;
 	top: 170px;
+	width: 50%;
+	color: white;
 	left: 268px;
-	width: 30%;
+	font-family: arial;
 }
-.info-parent .info-child .countries {
-	position: absolute;
-	top: 190px;
-	left: 268px;
+.info-parent .info-child ul {
+	list-style-type: none;
 }
-.info-parent .info-child .directors {
-	position: absolute;
-	top: 210px;
-	left: 268px;
+.info-parent .info-child li{
+	margin: 1px;
 }
-.info-parent .info-child .duration {
-	position: absolute;
-	top: 150px;
-	left: 650px;
-}
-.info-parent .info-child .date_published {
-	position: absolute;
-	top: 170px;
-	left: 650px;
-}
-.info-parent .info-child .imdb_score {
-	position: absolute;
-	top: 190px;
-	left: 650px;
-}
-.info-parent .info-child .rated {
-	position: absolute;
-	top: 150px;
-	left: 950px;
- }
-.info-parent .info-child .usa_gross_income {
-	position: absolute;
-	top: 170px;
-	left: 950px;
- }
+
+
+

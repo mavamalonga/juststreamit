@@ -28,9 +28,11 @@ function moreAboutMovie(ele){
       infoChild = document.createElement('div');
       infoChild.setAttribute('class', 'info-child');
 
+      /*
       reader = document.createElement('img');
       reader.setAttribute('src', '../static/img/moviebackground.png');
       reader.setAttribute('class', 'reader')
+      */
 
       poster = document.createElement('img');
       poster.setAttribute('src', `${data['image_url']}`);
@@ -42,56 +44,61 @@ function moreAboutMovie(ele){
       description.setAttribute('class', 'description');
       description.innerHTML = `${data['long_description']}`;
 
-      genres = document.createElement('p');
+      // ul container all details abot movie
+      ul = document.createElement('ul');
+
+      genres = document.createElement('li');
       genres.setAttribute('class', 'genres');
       genres.innerHTML = `Genres: ${data['genres']}`;
+      ul.appendChild(genres);
 
-      directors = document.createElement('p');
+      directors = document.createElement('li');
       directors.setAttribute('class', 'directors');
       directors.innerHTML = `Directors: ${data['directors']}`;
+      ul.appendChild(directors);
 
-      actors = document.createElement('p');
+
+      actors = document.createElement('li');
       actors.setAttribute('class', 'actors');
       actors.innerHTML = `Actors: ${data['actors']}`;
+      ul.appendChild(actors);
 
-      countries = document.createElement('p');
+      countries = document.createElement('li');
       countries.setAttribute('class', 'countries');
       countries.innerHTML = `Countries: ${data['countries']}`;
+      ul.appendChild(countries);
 
-      duration = document.createElement('p');
+      duration = document.createElement('li');
       duration.setAttribute('class', 'duration');
       duration.innerHTML = `Duration: ${data['duration']} min`;
+      ul.appendChild(duration);
 
-      date_published = document.createElement('p');
+      date_published = document.createElement('li');
       date_published.setAttribute('class', 'date_published');
       date_published.innerHTML = `Data published: ${data['date_published']}`;
+      ul.appendChild(date_published);
 
-      imdb_score = document.createElement('p');
+      imdb_score = document.createElement('li');
       imdb_score.setAttribute('class', 'imdb_score');
       imdb_score.innerHTML = `Imdb score: ${data['imdb_score']}`;
+      ul.appendChild(imdb_score);
 
-      rated = document.createElement('p');
+      rated = document.createElement('li');
       rated.setAttribute('class', 'rated');
       rated.innerHTML = `Rated: ${data['rated']}`;
+      ul.appendChild(rated);
 
-      usa_gross_income = document.createElement('p');
+      usa_gross_income = document.createElement('li');
       usa_gross_income.setAttribute('class', 'usa_gross_income');
       usa_gross_income.innerHTML = `Usa gross income: ${data['usa_gross_income']}`;
+      ul.appendChild(usa_gross_income);
 
-      infoChild.appendChild(poster);
-      infoChild.appendChild(title);
-      infoChild.appendChild(description);
-      infoChild.appendChild(genres);
-      infoChild.appendChild(directors);
-      infoChild.appendChild(actors);
-      infoChild.appendChild(countries);
-      infoChild.appendChild(duration);
-      infoChild.appendChild(date_published);
-      infoChild.appendChild(imdb_score);
-      infoChild.appendChild(rated);
-      infoChild.appendChild(usa_gross_income);
+      infoContainer.appendChild(poster);
+      infoContainer.appendChild(title);
+      infoContainer.appendChild(description);
+      infoChild.appendChild(ul);
 
-      infoContainer.appendChild(reader);
+      //infoContainer.appendChild(reader);
       infoContainer.appendChild(infoChild);
       body.appendChild(infoContainer);
       });
