@@ -1,4 +1,5 @@
 .top-movie-parent {
+  margin-top: 50px;
   height: 300px;
   width: 100%;
  }
@@ -12,8 +13,7 @@
 .top-movie-parent .item img {
   position: absolute;
   top: 0;
-  /*left: 240px;*/
-  left: 20%;
+  left: 18%;
   width: 219px;
   height: 100%;
 }

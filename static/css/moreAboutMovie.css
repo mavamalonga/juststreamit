@@ -3,6 +3,9 @@
 	color: white;
 	position: relative;
 }
+.info-parent a button {
+	color: white;
+}
 .info-parent img {
 	position: absolute;
 	top: 30px;

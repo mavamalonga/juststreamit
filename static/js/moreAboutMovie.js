@@ -33,6 +33,11 @@ function moreAboutMovie(ele){
       reader.setAttribute('src', '../static/img/moviebackground.png');
       reader.setAttribute('class', 'reader')
       */
+      link = document.createElement('a');
+      link.setAttribute('href', 'file:///C:/Users/HP/Desktop/juststreamit/template/index.html');
+      button = document.createElement('button');
+      button.innerHTML = "Previous";
+      link.appendChild(button);
 
       poster = document.createElement('img');
       poster.setAttribute('src', `${data['image_url']}`);
@@ -99,6 +104,7 @@ function moreAboutMovie(ele){
       infoChild.appendChild(ul);
 
       //infoContainer.appendChild(reader);
+      infoContainer.appendChild(link);
       infoContainer.appendChild(infoChild);
       body.appendChild(infoContainer);
       });
