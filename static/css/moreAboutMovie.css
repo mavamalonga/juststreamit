@@ -1,6 +1,6 @@
 .info-parent {
-	margin-top: 5%;
 	margin-left: 5%;
+	height: 500px;
 	width: 95%;
 	color: white;
 	position: relative;
@@ -10,7 +10,7 @@
 }
 .info-parent img {
 	position: absolute;
-	top: 30px;
+	top: 10%;
 	left: 30px;
 	width: 202px;
 	height: 288px;
@@ -18,23 +18,24 @@
 .info-parent h1 {
 	color: white;
 	position: absolute;
-	top: 30;
+	top: 10%;
 	left: 268px;
 }
 .info-parent .description {
 	color: grey;
 	position: absolute;
 	width: 50%;
-	top: 50px;
+	top: 20%;
 	left: 268px;
 }
 .info-parent .info-child {
 	position: absolute;
-	top: 170px;
+	top: 35%;
 	width: 50%;
 	color: white;
 	left: 268px;
 	font-family: arial;
+	font-size: 14px;
 }
 .info-parent .info-child ul {
 	list-style-type: none;

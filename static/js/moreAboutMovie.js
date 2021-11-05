@@ -38,6 +38,27 @@ function moreAboutMovie(ele){
       description.setAttribute('class', 'description');
       description.innerHTML = `${data['long_description']}`;
 
+      console.log(data['long_description'].length);
+
+      if (data['long_description'].length <= 200){
+        infoChild.style.top = "35%";
+      }else if( data['long_description'].length >= 200 && data['long_description'].length <= 300){
+        infoChild.style.top = "40%";
+      }else if ( data['long_description'].length >= 300 && data['long_description'].length <= 400){
+        infoChild.style.top = "45%";
+      }else if ( data['long_description'].length >= 400 && data['long_description'].length <= 500){
+        infoChild.style.top = "50%";
+      }else if ( data['long_description'].length >= 500 && data['long_description'].length <= 600){
+        infoChild.style.top = "55%";
+      }else if ( data['long_description'].length >= 600 && data['long_description'].length <= 700){
+        infoChild.style.top = "65%";
+      }else if ( data['long_description'].length >= 700 && data['long_description'].length <= 800){
+        infoChild.style.top = "70%";
+      }else {
+        infoChild.style.top = "70%";
+      }
+
+
       // ul container all details abot movie
       ul = document.createElement('ul');
 
@@ -84,7 +105,11 @@ function moreAboutMovie(ele){
 
       usa_gross_income = document.createElement('li');
       usa_gross_income.setAttribute('class', 'usa_gross_income');
-      usa_gross_income.innerHTML = `Usa gross income: ${data['usa_gross_income']}`;
+      if (data['usa_gross_income'] == null){
+        usa_gross_income.innerHTML = `Usa gross income: ${"No information available"}`;
+      }else{
+        usa_gross_income.innerHTML = `Usa gross income: ${data['usa_gross_income']}`;
+      }
       ul.appendChild(usa_gross_income);
 
       infoContainer.appendChild(poster);
