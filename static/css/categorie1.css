@@ -24,7 +24,14 @@
   cursor: pointer;
 }
 .parent .leftarrow {
-  background-color: grey;
+  background-color: #333;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
   cursor: pointer;
   position: absolute;
   top: 30px;
@@ -32,9 +39,20 @@
   width: 20px;
   height: 268px;
 }
+.parent .leftarrow:hover, .parent .rigtharrow:hover {
+  cursor: pointer;
+  background-color: #111;
+}
 
 .parent .rigtharrow {
-  background-color: grey;
+  background-color: #333;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
   cursor: pointer;
   position: absolute;
   top: 30px;

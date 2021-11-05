@@ -37,6 +37,18 @@
   top: 230px;
 }
 .top-movie-parent .item .btn-more button {
-  background-color: grey;
+  background-color: #333;
   color: white;
+
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.top-movie-parent .item .btn-more button:hover {
+  cursor: pointer;
+  background-color: #111;
 }
