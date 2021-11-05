@@ -27,8 +27,8 @@ function mainAnimationMovies(){
   					// update item
   					img = items4[nbAnimationMoviesAdded].getElementsByTagName("img")[0];
   					img.src = `${result['results'][i]['image_url']}`;
-  					title = items4[nbAnimationMoviesAdded].getElementsByClassName('title')[0];
-  					title.innerHTML = `${result['results'][i]['title']}`;
+  					/*title = items4[nbAnimationMoviesAdded].getElementsByClassName('title')[0];
+  					title.innerHTML = `${result['results'][i]['title']}`;*/
   					img.setAttribute('onclick', 'moreAboutMovie(this)');
   					img.setAttribute("id", `${result['results'][i]['id']}`);
 			    }

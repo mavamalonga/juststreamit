@@ -27,8 +27,8 @@ function mainAdventureMovies(){
   					// update item
   					img = items3[nbAdventureMoviesAdded].getElementsByTagName("img")[0];
   					img.src = `${result['results'][i]['image_url']}`;
-  					title = items3[nbAdventureMoviesAdded].getElementsByClassName('title')[0];
-  					title.innerHTML = `${result['results'][i]['title']}`;
+  					/*title = items3[nbAdventureMoviesAdded].getElementsByClassName('title')[0];
+  					title.innerHTML = `${result['results'][i]['title']}`;*/
   					img.setAttribute('onclick', 'moreAboutMovie(this)');
   					img.setAttribute("id", `${result['results'][i]['id']}`);
 			  	}

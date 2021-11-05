@@ -28,8 +28,8 @@ function main_movies_max_ranted(){
   					// update item
   					img = items_[nb_movies_added].getElementsByTagName("img")[0];
   					img.src = `${result['results'][i]['image_url']}`
-  					title = items_[nb_movies_added].getElementsByClassName('title')[0];
-  					title.innerHTML = `${result['results'][i]['title']}`;
+  					/*title = items_[nb_movies_added].getElementsByClassName('title')[0];
+  					title.innerHTML = `${result['results'][i]['title']}`;*/
   					img.setAttribute('onclick', 'moreAboutMovie(this)');
   					img.setAttribute("id", `${result['results'][i]['id']}`);
 			    }

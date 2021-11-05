@@ -34,10 +34,10 @@
 
   cursor: pointer;
   position: absolute;
-  top: 30px;
+  top: 25%;
   left: 228px;
   width: 20px;
-  height: 268px;
+  height: 50%;
 }
 .parent .leftarrow:hover, .parent .rigtharrow:hover {
   cursor: pointer;
@@ -55,10 +55,10 @@
 
   cursor: pointer;
   position: absolute;
-  top: 30px;
+  top: 25%;
   left: 990px;
   width: 20px;
-  height: 268px;
+  height: 50%;
 }
 
 .child .item .title {

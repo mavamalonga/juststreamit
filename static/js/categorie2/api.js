@@ -27,8 +27,8 @@ function mainActionMovies(){
   					// update item
   					img = items2[nbActionMoviesAdded].getElementsByTagName("img")[0];
   					img.src = `${result['results'][i]['image_url']}`
-  					title = items2[nbActionMoviesAdded].getElementsByClassName('title')[0];
-  					title.innerHTML = `${result['results'][i]['title']}`;
+  					/*title = items2[nbActionMoviesAdded].getElementsByClassName('title')[0];
+  					title.innerHTML = `${result['results'][i]['title']}`;*/
   					img.setAttribute('onclick', 'moreAboutMovie(this)');
   					img.setAttribute("id", `${result['results'][i]['id']}`);
 			    }
