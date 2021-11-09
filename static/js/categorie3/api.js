@@ -29,7 +29,7 @@ function mainAdventureMovies(){
   					img.src = `${result['results'][i]['image_url']}`;
   					/*title = items3[nbAdventureMoviesAdded].getElementsByClassName('title')[0];
   					title.innerHTML = `${result['results'][i]['title']}`;*/
-  					img.setAttribute('onclick', 'moreAboutMovie(this)');
+  					img.setAttribute('onclick', 'openModal(this)');
   					img.setAttribute("id", `${result['results'][i]['id']}`);
 			  	}
 			    nbAdventureMoviesAdded++;
