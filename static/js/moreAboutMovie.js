@@ -54,10 +54,11 @@ function moreAboutMovie(ele){
         infoChild.style.top = "65%";
       }else if ( data['long_description'].length >= 700 && data['long_description'].length <= 800){
         infoChild.style.top = "70%";
-      }else {
-        infoChild.style.top = "70%";
+      }else if ( data['long_description'].length >= 800 && data['long_description'].length <= 900){
+        infoChild.style.top = "75%";
+      }else{
+        infoChild.style.top = "80%";
       }
-
 
       // ul container all details abot movie
       ul = document.createElement('ul');

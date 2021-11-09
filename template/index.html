@@ -9,9 +9,10 @@
   <link rel="stylesheet" type="text/css" href="../static/css/categorie2.css">
   <link rel="stylesheet" type="text/css" href="../static/css/categorie3.css">
   <link rel="stylesheet" type="text/css" href="../static/css/categorie4.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/moreAboutMovie.css">
-  <script type="text/javascript" src="../static/js/moreAboutMovie.js"></script>
-  <script type="text/javascript" src="../static/js/responsive.js"></script>
+  <!--<link rel="stylesheet" type="text/css" href="../static/css/moreAboutMovie.css">
+  <script type="text/javascript" src="../static/js/moreAboutMovie.js"></script>-->
+  <link rel="stylesheet" type="text/css" href="../static/css/modal.css">
+  <script type="text/javascript" src="../static/js/modal.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -32,12 +33,38 @@
       <h1 class="title"></h1>
       <div class="description"></div>
       <div class="btn-more">
-        <button onclick="moreAboutMovie(this)">More info</button>
+        <button onclick="moreAboutMovie(this)" id="myBtn">More info</button>
       </div>
       <script type="text/javascript" src="../static/js/moreAboutMovie.js"></script>
     </div>
   </div>
   <script type="text/javascript" src="../static/js/top/api.js"></script>
+
+  <h2>Modal Example</h2>
+  <!-- Trigger/Open The Modal -->
+  <button id="myBtn">Open Modal</button>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>Notuku Potu</h1>
+      <img src="https:m.media-amazon.com/images/M/MV5BZDMwODgwOGItNTJjNS00NDk2LTlkYzEtYzRjOTU5YTBlZGY5XkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_UY268_CR9,0,182,268_AL_.jpg">
+      <p class="description">Notuku Potu is a crime story laced with elements of horror and thrill. The story is about a man who, after the death of a woman, is pulled into a world of mystery and conspiracy.</p>
+      <ul>
+        <li class="genres">Genres: Horreor, Mystery</li>
+        <li class="directors">Directors: Basheed S.K</li>
+        <li class="actors">Arjun Sarja, Manisha</li>
+        <li class="countries">Countries : India</li>
+        <li class="duration">Duration: 121 min</li>
+        <li class="date_published">Data published: 2007-03-24</li>
+        <li class="imdb_score">Imdb score: 9.6</li>
+        <li class="rated">Rated: Not rated or unkown rating</li>
+        <li class="usa_gross_income">usa gross income: No infomation available</li>
+    </div>
+  </div>
+  <script type="text/javascript" src="../static/js/modal.js"></script>
 
   <!-- Cactegorie 1 -->
   <div class="parent">
